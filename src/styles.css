@@ -1,0 +1,93 @@
+h5 {
+  color: burlywood;
+  font-size: 64px;
+  font-family: "Lobster Two", cursive;
+}
+
+h6 {
+  color: burlywood;
+  font-size: 38px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+button {
+  font-size: 16px;
+  padding: 5px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  background: burlywood;
+  transition: all 200ms linear;
+  font-family: "Source Sans Pro", sans-serif;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: white;
+}
+
+.buttons:hover {
+  color: palevioletred;
+}
+
+.card {
+  display: block;
+  margin: 0 auto;
+}
+
+.card-end {
+  text-align: center;
+}
+
+.buttons {
+  text-decoration: none;
+  color: grey;
+
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.current-icon {
+  font-size: 120px;
+  color: green;
+  padding: 10px;
+}
+.current-temp {
+  font-size: 52px;
+  font-family: "Lobster Two", cursive;
+  color: burlywood;
+  text-decoration: none;
+}
+
+.intra-card {
+  border-color: white;
+  padding: none;
+}
+
+.table {
+  display: inline;
+  padding: 20px;
+}
+
+.description {
+  color: grey;
+  font-size: 36px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.most-searched {
+  color: burlywood;
+  font-size: 28px;
+  font-family: "Lobster Two", cursive;
+}
+.most-cities {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+.footer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  color: #6789ba;
+  padding: 20px;
+}
