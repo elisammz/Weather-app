@@ -6,7 +6,7 @@ h5 {
 
 h6 {
   color: burlywood;
-  font-size: 38px;
+  font-size: 26px;
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -37,6 +37,7 @@ button:hover {
 
 .card-end {
   text-align: center;
+  display: block;
 }
 
 .buttons {
@@ -47,12 +48,12 @@ button:hover {
 }
 
 .current-icon {
-  font-size: 120px;
+  font-size: 80px;
   color: green;
   padding: 10px;
 }
 .current-temp {
-  font-size: 52px;
+  font-size: 36px;
   font-family: "Lobster Two", cursive;
   color: burlywood;
   text-decoration: none;
@@ -60,17 +61,20 @@ button:hover {
 
 .intra-card {
   border-color: white;
-  padding: none;
+  display: inline-block;
+  margin-top: 50px;
 }
 
 .table {
+  font-size: 24px;
   display: inline;
-  padding: 20px;
+  margin: 0px, auto;
+  padding-left: 40px;
 }
 
 .description {
   color: grey;
-  font-size: 36px;
+  font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
 

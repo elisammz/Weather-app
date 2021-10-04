@@ -29,9 +29,9 @@
   <style></style>
   <body>
     <div class="container">
-      <div class="card" style="width: 35rem">
+      <div class="card" style="width: 32rem">
         <div class="card-body">
-          <form id="my-input">
+          <form id="my-input" autocomplete="off">
             <input type="text" placeholder="Enter a city" id="city" />
             <button id="search-button">
               <a href="#" class="buttons">Search</a>
@@ -43,19 +43,26 @@
           </form>
           <br />
           <h5 class="card-title" id="title-city">Tokyo</h5>
+          <br />
+
           <h6 class="card-subtitle mb-2 text-muted" id="current-date"></h6>
+          <br />
 
-          <p class="description" id="description">
-            Chances of rain 40% <i class="fas fa-umbrella"></i>
-          </p>
-
-          <div class="card intra-card">
+          <div class="card intra-card" style="width: 15rem">
             <i class="fas fa-cloud-moon current-icon"></i>
             <span class="current-temp" id="temperature">24°</span>
             <a class="current-temp" id="celsius">C </a>
             <span class="current-temp"> | </span>
             <a class="current-temp" id="fahrenheit"> F</a>
+            <br />
+            <br />
+            <span class="description">
+              Chances of rain 40%
+              <i class="fas fa-umbrella"></i>
+            </span>
+          </div>
 
+          <span>
             <table class="table">
               <tbody>
                 <tr>
@@ -84,10 +91,10 @@
                 </tr>
               </tbody>
             </table>
-          </div>
+          </span>
 
           <hr />
-          <div class="card card-end" style="width: 30rem">
+          <div class="card card-end" style="width: 25rem">
             <div class="card-body">
               <span class="most-searched">Search for other cities</span>
               <div>

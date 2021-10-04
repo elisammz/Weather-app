@@ -15,7 +15,7 @@ let days = [
 let now = new Date();
 console.log(formatDate(new Date()));
 let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML = formatDate(new Date());
+currentDate.innerHTML = `Today ${formatDate(new Date())}`;
 
 function formatDate(current) {
   let day = now.getDay();
