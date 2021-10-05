@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster+Two:ital@0;1&family=Roboto&family=Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/d1fa248066.js"
       crossorigin="anonymous"
@@ -29,7 +33,7 @@
   <style></style>
   <body>
     <div class="container">
-      <div class="card" style="width: 32rem">
+      <div class="card" style="width: 35rem">
         <div class="card-body">
           <form id="my-input" autocomplete="off">
             <input type="text" placeholder="Enter a city" id="city" />
@@ -45,21 +49,17 @@
           <h5 class="card-title" id="title-city">Tokyo</h5>
           <br />
 
-          <h6 class="card-subtitle mb-2 text-muted" id="current-date"></h6>
+          <h6 class="subtitle" id="current-date"></h6>
           <br />
 
           <div class="card intra-card" style="width: 15rem">
             <i class="fas fa-cloud-moon current-icon"></i>
-            <span class="current-temp" id="temperature">24°</span>
-            <a class="current-temp" id="celsius">C </a>
-            <span class="current-temp"> | </span>
-            <a class="current-temp" id="fahrenheit"> F</a>
-            <br />
-            <br />
-            <span class="description">
-              Chances of rain 40%
-              <i class="fas fa-umbrella"></i>
-            </span>
+            <span class="current-temp" id="temperature">24</span>
+            <a class="current-temp" id="celsius"><sup>°C</sup> </a>
+            <span class="current-temp" id="separator"> <sup>|</sup> </span>
+            <a class="current-temp" id="fahrenheit"><sup>°F</sup></a>
+
+            <div class="description" id="description">Clouds</div>
           </div>
 
           <span>
@@ -96,13 +96,13 @@
           <hr />
           <div class="card card-end" style="width: 25rem">
             <div class="card-body">
-              <span class="most-searched">Search for other cities</span>
+              <span class="most-searched">Learn about climate crisis</span>
               <div>
                 <a href="#" class="card-link most-cities"
-                  >Coldest cities in world</a
+                  >Latest news from BBC</a
                 >
                 <a href="#" class="card-link most-cities"
-                  >Hottest cities in world</a
+                  >Latest news from CNN</a
                 >
               </div>
             </div>
@@ -114,7 +114,9 @@
     <script src="src/index.js"></script>
   </body>
   <p class="footer">
-    <a href="https://github.com/elisammz/sheCodesPlus-EM">Open-source code</a>
+    <a href="https://github.com/elisammz/sheCodesPlus-EM" target="blank"
+      >Open-source code</a
+    >
     by Elisa Mendoza 👩🏽‍💻
   </p>
 </html>

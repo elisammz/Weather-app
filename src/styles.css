@@ -1,23 +1,23 @@
 h5 {
-  color: burlywood;
+  color: #f4f49e;
   font-size: 64px;
   font-family: "Lobster Two", cursive;
 }
 
 h6 {
-  color: burlywood;
-  font-size: 26px;
-  font-family: "Source Sans Pro", sans-serif;
+  color: #8cdadb;
+  font-size: 30px;
+  font-family: "Quicksand", sans-serif;
 }
 
 button {
   font-size: 16px;
   padding: 5px;
   margin: 0 auto;
-  border: 1px solid gray;
-  background: burlywood;
+  border: 1px solid white;
+  background: #f4f49e;
   transition: all 200ms linear;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Quicksand", sans-serif;
   border-radius: 5px;
 }
 
@@ -33,34 +33,35 @@ button:hover {
 .card {
   display: block;
   margin: 0 auto;
+  background-color: #856c8b;
+  font-family: "Quicksand", sans-serif;
 }
 
 .card-end {
   text-align: center;
   display: block;
+  border-color: transparent;
 }
 
 .buttons {
   text-decoration: none;
   color: grey;
-
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .current-icon {
   font-size: 80px;
-  color: green;
+  color: #a4c5c6;
   padding: 10px;
 }
 .current-temp {
   font-size: 36px;
   font-family: "Lobster Two", cursive;
-  color: burlywood;
+  color: #f4f49e;
   text-decoration: none;
 }
 
 .intra-card {
-  border-color: white;
+  border-color: transparent;
   display: inline-block;
   margin-top: 50px;
 }
@@ -69,29 +70,52 @@ button:hover {
   font-size: 24px;
   display: inline;
   margin: 0px, auto;
-  padding-left: 40px;
+  padding-left: 65px;
+  color: white;
 }
 
 .description {
-  color: grey;
-  font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-size: 40px;
 }
 
 .most-searched {
-  color: burlywood;
+  color: #d4ebd0;
   font-size: 28px;
   font-family: "Lobster Two", cursive;
 }
 .most-cities {
-  color: black;
+  color: #9ddcdc;
   font-size: 16px;
   text-align: center;
 }
+
+a:hover {
+  cursor: pointer;
+  background: white;
+  color: #e67a7a;
+}
+
 .footer {
   font-family: "Courier New", Courier, monospace;
-  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
   text-align: center;
   color: #6789ba;
-  padding: 20px;
+}
+
+#separator {
+  color: white;
+}
+
+#celsius {
+  background-color: transparent;
+}
+#fahrenheit {
+  background-color: transparent;
+}
+a.current-temp:hover {
+  cursor: pointer;
+  color: white;
 }
