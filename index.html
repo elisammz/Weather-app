@@ -33,26 +33,29 @@
   <style></style>
   <body>
     <div class="container">
-      <div class="card" style="width: 35rem">
-        <div class="card-body">
-          <form id="my-input" autocomplete="off">
-            <input type="text" placeholder="Enter a city" id="city" />
-            <button id="search-button">
-              <a href="#" class="buttons">Search</a>
-            </button>
+      <div class="card">
+        <form id="my-input" autocomplete="off">
+          <input type="text" placeholder="Enter a city" id="city" />
+          <button id="search-button">
+            <a href="#" class="buttons">Search</a>
+          </button>
 
-            <button id="current-button">
-              <a href="#" class="buttons">Current</a>
-            </button>
-          </form>
-          <br />
-          <h5 class="card-title" id="title-city">Tokyo</h5>
-          <br />
+          <button id="current-button">
+            <a href="#" class="buttons">Current</a>
+          </button>
+        </form>
+        <br />
+        <h5 class="card-title" id="title-city">Tokyo</h5>
 
-          <h6 class="subtitle" id="current-date"></h6>
-          <br />
+        <div class="current-date">Today</div>
+        <h6 id="current-date"></h6>
+        <br />
 
-          <div class="card intra-card" style="width: 15rem">
+        <div class="row">
+          <div class="col-6">
+            <br />
+            <br />
+            <br />
             <i class="fas fa-cloud-moon current-icon"></i>
             <span class="current-temp" id="temperature">24</span>
             <a class="current-temp" id="celsius"><sup>°C</sup> </a>
@@ -62,7 +65,7 @@
             <div class="description" id="description">Clouds</div>
           </div>
 
-          <span>
+          <div class="col-6">
             <table class="table">
               <tbody>
                 <tr>
@@ -91,21 +94,24 @@
                 </tr>
               </tbody>
             </table>
-          </span>
-
-          <hr />
-          <div class="card card-end" style="width: 25rem">
-            <div class="card-body">
-              <span class="most-searched">Learn about climate crisis</span>
-              <div>
-                <a href="#" class="card-link most-cities"
-                  >Latest news from BBC</a
-                >
-                <a href="#" class="card-link most-cities"
-                  >Latest news from CNN</a
-                >
-              </div>
-            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="card card-end" style="width: 25rem">
+          <span class="most-searched">Learn about climate crisis</span>
+          <div>
+            <a
+              href="https://www.bbc.com/news/science-environment-56837908"
+              target="blank"
+              class="card-link most-cities"
+              >Latest news from BBC</a
+            >
+            <a
+              href="https://edition.cnn.com/specials/world/cnn-climate"
+              target="blank"
+              class="card-link most-cities"
+              >Latest news from CNN</a
+            >
           </div>
         </div>
       </div>

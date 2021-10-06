@@ -6,7 +6,7 @@ h5 {
 
 h6 {
   color: #8cdadb;
-  font-size: 30px;
+  font-size: 28px;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -35,17 +35,26 @@ button:hover {
   margin: 0 auto;
   background-color: #856c8b;
   font-family: "Quicksand", sans-serif;
+  padding: 20px;
+  max-width: 600px;
 }
 
 .card-end {
   text-align: center;
   display: block;
   border-color: transparent;
+  padding: 0;
 }
 
 .buttons {
   text-decoration: none;
   color: grey;
+}
+
+.current-date {
+  color: #8cdadb;
+  font-size: 36px;
+  font-family: "Quicksand", sans-serif;
 }
 
 .current-icon {
@@ -59,18 +68,8 @@ button:hover {
   color: #f4f49e;
   text-decoration: none;
 }
-
-.intra-card {
-  border-color: transparent;
-  display: inline-block;
-  margin-top: 50px;
-}
-
 .table {
   font-size: 24px;
-  display: inline;
-  margin: 0px, auto;
-  padding-left: 65px;
   color: white;
 }
 
