@@ -48,17 +48,22 @@ function searchCity(event) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrl).then(addDescription);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //Temperature scale
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeScale);
-let celsius = document.querySelector("#fahrenheit");
-celsius.addEventListener("click", changeScale);
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", searchCity);
 
-function changeScale() {
-  let newScale = document.querySelector("#temperature");
-  newScale.innerHTML = "75°";
+function changeScale(response) {
+  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+  let cityInput = document.querySelector("#city");
+  let cityName = cityInput.value.toLowerCase();
+  apiUrl = `${apiUrl}q=${cityName}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showTemperature);
 }
 
 //Find position and give current temperature
@@ -77,12 +82,13 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+//Show temperature
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   console.log(temperature);
   let title = document.querySelector("#temperature");
-  title.innerHTML = `${temperature}°`;
+  title.innerHTML = `${temperature}`;
   let newCity = document.querySelector("#title-city");
   newCity.innerHTML = `${city}`;
 }
@@ -93,3 +99,10 @@ function addDescription(response) {
   let description = document.querySelector("#description");
   description.innerHTML = `${newDescription}`;
 }
+
+function search(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+search("Tokyo");

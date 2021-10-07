@@ -16,17 +16,14 @@ button {
   margin: 0 auto;
   border: 1px solid white;
   background: #f4f49e;
-  transition: all 200ms linear;
   font-family: "Quicksand", sans-serif;
   border-radius: 5px;
 }
 
 button:hover {
+  transition: all 200ms linear;
   cursor: pointer;
   background: white;
-}
-
-.buttons:hover {
   color: palevioletred;
 }
 
@@ -63,7 +60,7 @@ button:hover {
   padding: 10px;
 }
 .current-temp {
-  font-size: 36px;
+  font-size: 46px;
   font-family: "Lobster Two", cursive;
   color: #f4f49e;
   text-decoration: none;
@@ -71,6 +68,7 @@ button:hover {
 .table {
   font-size: 24px;
   color: white;
+  max-width: 200px;
 }
 
 .description {
@@ -106,13 +104,16 @@ a:hover {
 
 #separator {
   color: white;
+  font-size: 30px;
 }
 
 #celsius {
   background-color: transparent;
+  font-size: 30px;
 }
 #fahrenheit {
   background-color: transparent;
+  font-size: 30px;
 }
 a.current-temp:hover {
   cursor: pointer;
