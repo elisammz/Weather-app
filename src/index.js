@@ -91,6 +91,8 @@ function showTemperature(response) {
   title.innerHTML = `${temperature}`;
   let newCity = document.querySelector("#title-city");
   newCity.innerHTML = `${city}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", ``);
 }
 
 function addDescription(response) {
