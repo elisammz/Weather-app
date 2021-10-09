@@ -92,7 +92,12 @@ function showTemperature(response) {
   let newCity = document.querySelector("#title-city");
   newCity.innerHTML = `${city}`;
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", ``);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  getForecast(response.data.coord);
 }
 
 function addDescription(response) {
