@@ -34,17 +34,29 @@
   <body>
     <div class="container">
       <div class="card">
-        <form id="my-input" autocomplete="off">
-          <input type="text" placeholder="Enter a city" id="city" />
-          <button id="search-button">
-            <a href="#" class="buttons">Search</a>
-          </button>
-
-          <button id="current-button">
-            <a href="#" class="buttons">Current</a>
-          </button>
+        <form id="my-input" autocomplete="off" class="mb-3">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                id="city"
+                class="form-control"
+              />
+            </div>
+            <div class="col-3">
+              <button id="search-button">
+                <a href="#" class="buttons">Search</a>
+              </button>
+            </div>
+            <div class="col-3">
+              <button id="current-button">
+                <a href="#" class="buttons">Current</a>
+              </button>
+            </div>
+          </div>
         </form>
-        <br />
+
         <h5 class="card-title" id="title-city"></h5>
 
         <div class="current-date">Today</div>
@@ -54,15 +66,15 @@
         <div class="row">
           <div class="col-6">
             <br />
-            <br />
-            <br />
-            <img src="#" id="icon" />
-            <span class="current-temp" id="temperature"></span>
-            <a class="current-temp" id="celsius"><sup>°C</sup> </a>
-            <span class="current-temp" id="separator"> <sup>|</sup> </span>
-            <a class="current-temp" id="fahrenheit"><sup>°F</sup></a>
 
-            <div class="description" id="description">Clouds</div>
+            <img src="#" id="icon" />
+            <div>
+              <span class="current-temp" id="temperature"></span>
+              <a id="celsius" class="active"><sup>°C</sup> </a>
+              <span class="current-temp" id="separator"> <sup>|</sup> </span>
+              <a id="fahrenheit"><sup>°F</sup></a>
+            </div>
+            <div class="description" id="description"></div>
           </div>
 
           <div class="col-6">
@@ -118,8 +130,6 @@
     <script src="src/index.js"></script>
   </body>
   <p class="footer">
-    <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-
     <a href="https://github.com/elisammz/sheCodesPlus-EM" target="blank"
       >Open-source code</a
     >

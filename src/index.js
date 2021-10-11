@@ -1,5 +1,6 @@
 //my apiKey
 let apiKey = "7b82360a89d434b6c2917003378b2c60";
+let celsiusTemperature = null;
 
 //Date
 let days = [
@@ -13,8 +14,9 @@ let days = [
 ];
 
 let now = new Date();
-console.log(formatDate(new Date()));
 let currentDate = document.querySelector("#current-date");
+
+console.log(formatDate(new Date()));
 currentDate.innerHTML = ` ${formatDate(new Date())}`;
 
 function formatDate(current) {
@@ -30,12 +32,11 @@ function formatDate(current) {
 
 //Form
 let form = document.querySelector("#my-input");
-form.addEventListener("submit", searchCity);
-
 let button = document.querySelector("#search-button");
-button.addEventListener("click", searchCity);
-
 let currentButton = document.querySelector("#current-button");
+
+form.addEventListener("submit", searchCity);
+button.addEventListener("click", searchCity);
 currentButton.addEventListener("click", showCurrent);
 
 function searchCity(event) {
@@ -48,22 +49,32 @@ function searchCity(event) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrl).then(addDescription);
-  axios.get(apiUrl).then(displayForecast);
 }
 
 //Temperature scale
 let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeScale);
 let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", searchCity);
 
-function changeScale(response) {
-  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
-  let cityInput = document.querySelector("#city");
-  let cityName = cityInput.value.toLowerCase();
-  apiUrl = `${apiUrl}q=${cityName}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(showTemperature);
+fahrenheit.addEventListener("click", changeScale);
+celsius.addEventListener("click", changeScaletoC);
+
+function changeScale(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  //remove the active class
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperatureF = Math.round((celsiusTemperature * 9) / 5 + 32);
+  console.log(temperatureF);
+  temperature.innerHTML = `${temperatureF}`;
+}
+
+function changeScaletoC(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 //Find position and give current temperature
@@ -97,7 +108,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  getForecast(response.data.coord);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function addDescription(response) {
@@ -110,6 +121,7 @@ function addDescription(response) {
 function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(addDescription);
 }
 
 search("Tokyo");
