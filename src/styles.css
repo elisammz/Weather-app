@@ -76,7 +76,8 @@ button:hover {
 .table {
   font-size: 24px;
   color: white;
-  max-width: 200px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .description {
@@ -125,4 +126,18 @@ a:hover {
   background-color: transparent;
   font-size: 30px;
   text-decoration: none;
+}
+
+td {
+  border-bottom: none;
+}
+
+.weather-forecast-temperature {
+  font-size: 16px;
+}
+.weather-forecast-temperature-max {
+  padding: 15px;
+}
+.weather-forecast-temperature-mix {
+  padding: 15px;
 }
