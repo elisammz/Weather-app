@@ -121,8 +121,17 @@ function getForecast(coordinates) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector(".weather-forecast-date");
-  forecastElement.innerHTML = "Day";
+
+  let forecastHTML = `<tr>`;
+
+  forecastElement.innerHTML = `<div class="weather-forecast-date">Monday</div>
+                  <div class="weather-forecast-temperature">
+                    <span class="weather-forecast-temperature-max"> 18 </span>
+                    <span class="weather-forecast-temperature-min"> 12 </span>
+                  </div>`;
 }
 
 function addDescription(response) {
