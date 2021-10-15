@@ -123,15 +123,25 @@ function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
 
-  let forecastElement = document.querySelector(".weather-forecast-date");
+  let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<tr>`;
-
-  forecastElement.innerHTML = `<div class="weather-forecast-date">Monday</div>
+  let forecastHTML = `<table class="table">`;
+  let days = ["mon", "tue", "fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <tr>
+                <td>
+                  <div class="weather-forecast-date">Holi</div>
                   <div class="weather-forecast-temperature">
-                    <span class="weather-forecast-temperature-max"> 18 </span>
-                    <span class="weather-forecast-temperature-min"> 12 </span>
-                  </div>`;
+                  <span class="weather-forecast-temperature-max">18 </span><span class="weather-forecast-temperature-min">17 </span></div>
+                </td>
+                <td><i class="fas fa-cloud-sun-rain"></i></td><tr>
+              `;
+  });
+
+  forecastHTML = forecastHTML + `</table>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function addDescription(response) {
