@@ -121,6 +121,14 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let forecastDay = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[forecastDay];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
@@ -129,22 +137,34 @@ function displayForecast(response) {
 
   let forecastHTML = `<table class="table">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      ` <tr>
+  forecast.forEach(function (forecastDay, index) {
+    if ((index > 0) & (index < 5)) {
+      forecastHTML =
+        forecastHTML +
+        ` <tr>
                 <td>
-                  <div class="weather-forecast-date">${forecastDay.dt}</div>
+               
+                  <div class="weather-forecast-date">${formatDay(
+                    forecastDay.dt
+                  )}</div>
                   <div class="weather-forecast-temperature">
-                  <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span><span class="weather-forecast-temperature-min">${forecastDay.temp.min}° </span></div>
+                  <span class="weather-forecast-temperature-max">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span><span class="weather-forecast-temperature-min">${Math.round(
+          forecastDay.temp.min
+        )}° </span></div>
                 </td>
                 <td> <img
-          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt=""
           width="42"
         /></td><tr>
               `;
+    }
   });
+
   forecastHTML = forecastHTML + `</table>`;
   forecastElement.innerHTML = forecastHTML;
 }
