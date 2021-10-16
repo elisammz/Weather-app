@@ -114,7 +114,9 @@ function showTemperature(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -126,20 +128,23 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<table class="table">`;
-  let days = ["mon", "tue", "fri"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       ` <tr>
                 <td>
-                  <div class="weather-forecast-date">Holi</div>
+                  <div class="weather-forecast-date">${forecastDay.dt}</div>
                   <div class="weather-forecast-temperature">
-                  <span class="weather-forecast-temperature-max">18 </span><span class="weather-forecast-temperature-min">17 </span></div>
+                  <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span><span class="weather-forecast-temperature-min">${forecastDay.temp.min}° </span></div>
                 </td>
-                <td><i class="fas fa-cloud-sun-rain"></i></td><tr>
+                <td> <img
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          alt=""
+          width="42"
+        /></td><tr>
               `;
   });
-
   forecastHTML = forecastHTML + `</table>`;
   forecastElement.innerHTML = forecastHTML;
 }

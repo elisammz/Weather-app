@@ -135,6 +135,9 @@ td {
 .weather-forecast-temperature {
   font-size: 16px;
   text-align: center;
+  color: white;
+  max-width: 600px;
+  text-align: center;
 }
 .weather-forecast-temperature-max {
   padding: 15px;
