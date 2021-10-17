@@ -61,6 +61,7 @@ celsius.addEventListener("click", changeScaletoC);
 function changeScale(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
+
   //remove the active class
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
@@ -138,7 +139,7 @@ function displayForecast(response) {
   let forecastHTML = `<table class="table">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if ((index > 0) & (index < 5)) {
+    if (index < 4) {
       forecastHTML =
         forecastHTML +
         ` <tr>
@@ -148,9 +149,9 @@ function displayForecast(response) {
                     forecastDay.dt
                   )}</div>
                   <div class="weather-forecast-temperature">
-                  <span class="weather-forecast-temperature-max">${Math.round(
+                  <span class="weather-forecast-temperature-max" id = "temperature-max">${Math.round(
                     forecastDay.temp.max
-                  )}°</span><span class="weather-forecast-temperature-min">${Math.round(
+                  )}°</span><span class="weather-forecast-temperature-min" id = "temperature-min">${Math.round(
           forecastDay.temp.min
         )}° </span></div>
                 </td>
