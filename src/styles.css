@@ -56,7 +56,7 @@ button:hover {
 
 .current-icon {
   font-size: 80px;
-  color: #a4c5c6;
+
   padding: 0px;
 }
 .current-temp {
@@ -128,10 +128,6 @@ a:hover {
   text-decoration: none;
 }
 
-td {
-  border-bottom: none;
-}
-
 .weather-forecast-temperature {
   font-size: 16px;
   text-align: center;
@@ -144,4 +140,7 @@ td {
 }
 .weather-forecast-temperature-mix {
   padding: 15px;
+}
+.weather-forecast-date {
+  color: white;
 }
